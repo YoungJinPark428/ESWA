@@ -2,7 +2,7 @@
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESWA 파라변경/부동내역 공유 양식</title>
+    <title>PRI L&S 파라변경/부동내역 공유 양식</title>
     <style>
         body {
             font-family: 'Malgun Gothic', sans-serif;
@@ -111,7 +111,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>ESWA 파라변경이력 부동내역 양식</h1>
+            <h1>PRI L&S 파라변경이력 부동내역 양식</h1>
             <p>Parameter 변경이력 및 부동&amp;작업내역 양식 입력</p>
         </div>
         
@@ -131,30 +131,25 @@
             <div id="parameterForm" class="form">
             <!-- 원래거 div id="parameterForm" class="form active" -->
 
+                <div class="form-group">
+                    <label for="para-site">0. Site :</label>
+                    <select id="para-site">
+                        <option value="-">-</option>
+                        <option value="WA">WA</option>
+                        <option value="UC1">UC1</option>
+                        <option value="UC2">UC2</option>
+                        <option value="MI1">MI1</option>
+                        <option value="MI2">MI2</option>
+                        <option value="MI3">MI3</option>
+                        <option value="NSE">NSE</option>
+                        <option value="L-H">L-H</option>
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label for="para-machine">1. 호기 :</label>
                     <select id="para-machine">
-                        <option value="26-1">26-1</option>
-                        <option value="26-2">26-2</option>
-                        <option value="26-3">26-3</option>
-                        <option value="26-4">26-4</option>
-                        <option value="26-5">26-5</option>
-                        <option value="27-1">27-1</option>
-                        <option value="27-2">27-2</option>
-                        <option value="27-3">27-3</option>
-                        <option value="27-4">27-4</option>
-                        <option value="27-5">27-5</option>
-                        <option value="28-1">28-1</option>
-                        <option value="28-2">28-2</option>
-                        <option value="28-3">28-3</option>
-                        <option value="28-4">28-4</option>
-                        <option value="28-5">28-5</option>
-                        <option value="28-6">28-6</option>
-                        <option value="29-1">29-1</option>
-                        <option value="29-2">29-2</option>
-                        <option value="29-3">29-3</option>
-                        <option value="26-H">26-H</option>
+                        <option value="-">-</option>
 
 
                     </select>
@@ -223,31 +218,33 @@
             <div id="troubleForm" class="form active">
                 <div class="form-group">
                     <label for="trouble-type">종류 :</label>
-                    <input type="text" id="trouble-type" placeholder="예: BM/PD/재료교체 등">                    
+                    <select id="trouble-type">
+                        <option value="BM">BM</option>
+                        <option value="PD">PD</option>
+                        <option value="PM">PM</option>
+                        <option value="생산준비">생산준비</option>
+                    </select>                   
                 </div>
+
                 <div class="form-group">
-                    <label for="trouble-machine">1. 호기 :</label>
+                    <label for="trouble-site">0. Site :</label>
+                    <select id="trouble-site">
+                        <option value="-">-</option>
+                        <option value="WA">WA</option>
+                        <option value="UC1">UC1</option>
+                        <option value="UC2">UC2</option>
+                        <option value="MI1">MI1</option>
+                        <option value="MI2">MI2</option>
+                        <option value="MI3">MI3</option>
+                        <option value="NSE">NSE</option>
+                        <option value="L-H">L-H</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="trouble-machine">1-1. 호기 :</label>
                     <select id="trouble-machine">
-                        <option value="26-1">26-1</option>
-                        <option value="26-2">26-2</option>
-                        <option value="26-3">26-3</option>
-                        <option value="26-4">26-4</option>
-                        <option value="26-5">26-5</option>
-                        <option value="27-1">27-1</option>
-                        <option value="27-2">27-2</option>
-                        <option value="27-3">27-3</option>
-                        <option value="27-4">27-4</option>
-                        <option value="27-5">27-5</option>
-                        <option value="28-1">28-1</option>
-                        <option value="28-2">28-2</option>
-                        <option value="28-3">28-3</option>
-                        <option value="28-4">28-4</option>
-                        <option value="28-5">28-5</option>
-                        <option value="28-6">28-6</option>
-                        <option value="29-1">29-1</option>
-                        <option value="29-2">29-2</option>
-                        <option value="29-3">29-3</option>
-                        <option value="26-H">26-H</option>
+                        <option value="-">-</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -296,7 +293,11 @@
                     <textarea id="trouble-problem" placeholder="현상 입력"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="trouble-action">6. 조치 :</label>
+                    <label for="trouble-reason">6. 원인 :</label>
+                    <textarea id="trouble-reason" placeholder="원인 입력"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="trouble-action">7. 조치 :</label>
                     <textarea id="trouble-action" placeholder="조치 내용 입력"></textarea>
                 </div>
                 <button class="button" onclick="generateTroubleText()">양식 생성하기</button>
@@ -318,6 +319,78 @@
     </div>
 
     <script>
+
+document.getElementById('para-site').addEventListener('change', function () {
+    const site = this.value;
+    const machineSelect = document.getElementById('para-machine');
+    machineSelect.innerHTML = ''; // 기존 옵션 제거
+
+    let options = [];
+    if (site === 'WA') {
+        options = ['-', '26-1', '26-2', '26-3', '26-4', '26-5', '26-H', '27-1', '27-2', '27-3', '27-4', '27-5', '28-1', '28-2', '28-3', '28-4', '28-5', '28-6', '29-1(HC겸용)', '29-2', '29-3'];
+    } else if (site === 'UC1') {
+        options = ['-', 'HC1', 'HC2', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3', 'HC3', 'HC4', '6-1', '6-2', '6-3', '7-1', '7-2', '7-3', '8-1', '8-2', '8-3', '9-1', '9-2', '9-3', '10-1', '10-2', '10-3'];
+    } else if (site === 'UC2') {
+        options = ['-', 'HC1', 'HC2', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3', 'HC3', 'HC4', '6-1', '6-2', '6-3', '7-1', '7-2', '7-3', '8-1', '8-2', '8-3', '9-1', '9-2', '9-3', '10-1', '10-2', '10-3'];
+    } else if (site === 'MI1') {
+        options = ['-', '1-1', '1-2', '1-3', '1-4', '1-5', '1-H', '2-1', '2-2', '2-3', '2-4'];
+    } else if (site === 'MI2') {
+        options = ['-', '3-1', '3-2', '3-3', '3-4', '3-5', '3-H', '4-1', '4-2', '4-3', '4-4', '4-5', '4-6', '5-1', '5-2', '5-3', '5-4', '5-5(HC겸용)'];
+    } else if (site === 'MI3') {
+        options = ['-', 'HC1', 'HC2', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3'];
+    } else if (site === 'NSE') {
+        options = ['-', '1-1', '1-2', '1-3', '1-4', '1-5', '1-H', '2-1', '2-2', '2-3', '2-4', '2-5', '2-H', '3-1', '3-2', '3-3', '3-4', '3-5', '4-1', '4-2', '4-3', '4-4', '4-5', '4-6'];
+    } else if (site === 'L-H') {
+        options = ['-', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '2-4', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3', '6-1', '6-2', '6-3', 'HC1', 'HC2'];
+    } else {
+        options = ['기타']; // 다른 site 선택 시 기본 옵션
+    }
+
+    options.forEach(function (opt) {
+        const option = document.createElement('option');
+        option.value = opt;
+        option.textContent = opt;
+        machineSelect.appendChild(option);
+    });
+});
+
+// TroubleForm도 동일하게
+document.querySelectorAll('#troubleForm select[id="trouble-site"]')[0]
+    ?.addEventListener('change', function () {
+    const site = this.value;
+    const machineSelect = document.getElementById('trouble-machine');
+    machineSelect.innerHTML = '';
+
+    let options = [];
+    if (site === 'WA') {
+        options = ['-', '26-1', '26-2', '26-3', '26-4', '26-5', '26-H', '27-1', '27-2', '27-3', '27-4', '27-5', '28-1', '28-2', '28-3', '28-4', '28-5', '28-6', '29-1(HC겸용)', '29-2', '29-3'];
+    } else if (site === 'UC1') {
+        options = ['-', 'HC1', 'HC2', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3', 'HC3', 'HC4', '6-1', '6-2', '6-3', '7-1', '7-2', '7-3', '8-1', '8-2', '8-3', '9-1', '9-2', '9-3', '10-1', '10-2', '10-3'];
+    } else if (site === 'UC2') {
+        options = ['-', 'HC1', 'HC2', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3', 'HC3', 'HC4', '6-1', '6-2', '6-3', '7-1', '7-2', '7-3', '8-1', '8-2', '8-3', '9-1', '9-2', '9-3', '10-1', '10-2', '10-3'];
+    } else if (site === 'MI1') {
+        options = ['-', '1-1', '1-2', '1-3', '1-4', '1-5', '1-H', '2-1', '2-2', '2-3', '2-4'];
+    } else if (site === 'MI2') {
+        options = ['-', '3-1', '3-2', '3-3', '3-4', '3-5', '3-H', '4-1', '4-2', '4-3', '4-4', '4-5', '4-6', '5-1', '5-2', '5-3', '5-4', '5-5(HC겸용)'];
+    } else if (site === 'MI3') {
+        options = ['-', 'HC1', 'HC2', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3'];
+    } else if (site === 'NSE') {
+        options = ['-', '1-1', '1-2', '1-3', '1-4', '1-5', '1-H', '2-1', '2-2', '2-3', '2-4', '2-5', '2-H', '3-1', '3-2', '3-3', '3-4', '3-5', '4-1', '4-2', '4-3', '4-4', '4-5', '4-6'];
+    } else if (site === 'L-H') {
+        options = ['-', '1-1', '1-2', '1-3', '2-1', '2-2', '2-3', '2-4', '3-1', '3-2', '3-3', '4-1', '4-2', '4-3', '5-1', '5-2', '5-3', '6-1', '6-2', '6-3', 'HC1', 'HC2'];
+    } else {
+        options = ['기타']; // 다른 site 선택 시 기본 옵션
+    }
+
+    options.forEach(function (opt) {
+        const option = document.createElement('option');
+        option.value = opt;
+        option.textContent = opt;
+        machineSelect.appendChild(option);
+    });
+});
+
+
         // 파라유닛 선택항목 함수
 document.getElementById('para-process').addEventListener('change', function () {
     const process = this.value;
@@ -593,6 +666,7 @@ document.getElementById('trouble-unit').addEventListener('change', function () {
         
         // 파라미터 변경 양식 생성 함수
         function generateParameterText() {
+            const site = document.getElementById('para-site').value;
             const machine = document.getElementById('para-machine').value;
             const process = document.getElementById('para-process').value;
             const unit = document.getElementById('para-unit').value;
@@ -604,7 +678,8 @@ document.getElementById('trouble-unit').addEventListener('change', function () {
             const worker = document.getElementById('para-worker').value;
             const reason = document.getElementById('para-reason').value;
             
-            let text = `■ 파라미터, IP 변경 공유\n`;
+            let text = `♣파라미터, IP 변경 공유\n`;
+            text += `0. Site : ${site}\n`;
             text += `1. 호기 : ${machine}\n`;
             text += `2-1. Machine : ${process}\n`;
             text += `2-2. Unit : ${unit}\n`;
@@ -624,6 +699,7 @@ document.getElementById('trouble-unit').addEventListener('change', function () {
         // 부동내역 양식 생성 함수
         function generateTroubleText() {
             const type = document.getElementById('trouble-type').value;
+            const site = document.getElementById('trouble-site').value;
             const machine = document.getElementById('trouble-machine').value;
             const process = document.getElementById('trouble-process').value;
             const unit = document.getElementById('trouble-unit').value;
@@ -632,19 +708,22 @@ document.getElementById('trouble-unit').addEventListener('change', function () {
             const complete = formatDateTime(document.getElementById('trouble-complete').value);
             const worker = document.getElementById('trouble-worker').value;
             const problem = document.getElementById('trouble-problem').value;
+            const reason = document.getElementById('trouble-reason').value;
             const action = document.getElementById('trouble-action').value;
             
-            let text = `[부동&작업 공유]\n`;
+            let text = `♧부동&작업 공유\n`;
             text += `종류: ${type}\n`;
-            text += `1. 호기: ${machine}\n`;
-            text += `2-1. Machine: ${process}\n`;
-            text += `2-2. Unit: ${unit}\n`;
-            text += `2-3. Assy': ${assy}\n`;
-            text += `3-1. 발생시간: ${time}\n`;
-            text += `3-2. 조치완료: ${complete}\n`;
-            text += `4. 작업자: ${worker}\n`;
-            text += `5. 현상: ${problem}\n`;
-            text += `6. 조치: ${action}`;
+            text += `0. Site : ${site}\n`;
+            text += `1. 호기 : ${machine}\n`;
+            text += `2-1. Machine : ${process}\n`;
+            text += `2-2. Unit : ${unit}\n`;
+            text += `2-3. Assy' : ${assy}\n`;
+            text += `3-1. 발생시간 : ${time}\n`;
+            text += `3-2. 조치완료 : ${complete}\n`;
+            text += `4. 작업자 : ${worker}\n`;
+            text += `5. 현상 : ${problem}\n`;
+            text += `6. 원인 : ${reason}\n`;
+            text += `7. 조치 : ${action}`;
             
             // 결과 표시
             document.getElementById('resultText').innerText = text;
